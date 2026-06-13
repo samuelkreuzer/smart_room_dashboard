@@ -1,0 +1,14 @@
+[
+  {
+    "id": "setup-calendar",
+    "title": "Add Google Calendar private iCal URL",
+    "done": false,
+    "createdAt": "2026-06-13T00:00:00+00:00"
+  },
+  {
+    "id": "setup-kiosk",
+    "title": "Run Raspberry Pi kiosk installer",
+    "done": false,
+    "createdAt": "2026-06-13T00:00:00+00:00"
+  }
+]

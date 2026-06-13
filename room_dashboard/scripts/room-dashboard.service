@@ -1,0 +1,15 @@
+[Unit]
+Description=Smart Room Dashboard local web server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Documents/room_dashboard
+Environment=ROOM_DASHBOARD_PORT=8080
+ExecStart=/usr/bin/python3 %h/Documents/room_dashboard/dashboard.py --host 127.0.0.1 --port 8080
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

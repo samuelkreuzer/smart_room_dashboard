@@ -1,0 +1,52 @@
+{
+  "dashboard": {
+    "title": "Smart Room Dashboard",
+    "subtitle": "Home status, schedule, tasks, music and news",
+    "timezone": "Europe/Berlin"
+  },
+  "refresh": {
+    "weatherSeconds": 900,
+    "calendarSeconds": 300,
+    "todoSeconds": 60,
+    "statusSeconds": 10,
+    "rssSeconds": 900
+  },
+  "weather": {
+    "locationName": "Berlin",
+    "latitude": 52.52,
+    "longitude": 13.405,
+    "timezone": "Europe/Berlin",
+    "forecastDays": 5
+  },
+  "calendar": {
+    "daysAhead": 21,
+    "maxItems": 8,
+    "calendars": [
+      {
+        "name": "Personal",
+        "color": "#5eead4",
+        "url": ""
+      }
+    ]
+  },
+  "rss": {
+    "maxItems": 8,
+    "feeds": [
+      {
+        "name": "Tagesschau",
+        "url": "https://www.tagesschau.de/xml/rss2"
+      },
+      {
+        "name": "BBC World",
+        "url": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    ]
+  },
+  "music": {
+    "enabled": true
+  },
+  "network": {
+    "checkHost": "1.1.1.1",
+    "checkPort": 53
+  }
+}

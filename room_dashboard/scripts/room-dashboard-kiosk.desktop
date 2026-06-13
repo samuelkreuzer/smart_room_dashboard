@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Smart Room Dashboard Kiosk
+Comment=Open Smart Room Dashboard in Chromium kiosk mode
+Exec=sh -lc 'sleep 8; exec chromium-browser --kiosk --noerrdialogs --disable-infobars --disable-session-crashed-bubble --check-for-update-interval=31536000 http://127.0.0.1:8080'
+X-GNOME-Autostart-enabled=true

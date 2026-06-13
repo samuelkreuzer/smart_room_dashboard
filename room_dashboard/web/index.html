@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0d10" />
+    <title>Smart Room Dashboard</title>
+    <link rel="stylesheet" href="/styles.css?v=1.0.0" />
+  </head>
+  <body>
+    <main class="dashboard-shell">
+      <header class="topbar">
+        <section class="identity" aria-label="Dashboard identity">
+          <p class="eyebrow">Live room system</p>
+          <h1 id="dashboard-title">Smart Room Dashboard</h1>
+          <p id="dashboard-subtitle">Home status, schedule, tasks, music and news</p>
+        </section>
+
+        <section class="clock-panel" aria-label="Current time">
+          <time id="clock-time" class="clock-time">--:--</time>
+          <time id="clock-date" class="clock-date">Loading date</time>
+        </section>
+      </header>
+
+      <section class="overview-strip" aria-label="Quick status">
+        <article class="metric-card weather-chip">
+          <span class="metric-label">Outside</span>
+          <strong id="quick-temperature">-- C</strong>
+          <span id="quick-condition">Waiting for weather</span>
+        </article>
+        <article class="metric-card">
+          <span class="metric-label">Internet</span>
+          <strong id="quick-online">Checking</strong>
+          <span id="quick-network">Network status pending</span>
+        </article>
+        <article class="metric-card">
+          <span class="metric-label">Music</span>
+          <strong id="quick-music-status">Idle</strong>
+          <span id="quick-music-title">No player detected</span>
+        </article>
+        <article class="metric-card">
+          <span class="metric-label">Next event</span>
+          <strong id="quick-event-time">No event</strong>
+          <span id="quick-event-title">Calendar not loaded</span>
+        </article>
+      </section>
+
+      <section class="dashboard-grid" aria-label="Dashboard modules">
+        <article class="panel weather-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Weather</p>
+              <h2 id="weather-location">Configured location</h2>
+            </div>
+            <span id="weather-updated" class="freshness">Waiting</span>
+          </div>
+
+          <div class="weather-current">
+            <div>
+              <span id="weather-icon" class="weather-symbol cloud">CLOUD</span>
+              <p id="weather-condition" class="weather-condition">Loading forecast</p>
+            </div>
+            <strong id="weather-temp" class="weather-temp">-- C</strong>
+          </div>
+
+          <div class="weather-details">
+            <span><b id="weather-feels">-- C</b> feels like</span>
+            <span><b id="weather-humidity">--%</b> humidity</span>
+            <span><b id="weather-wind">-- km/h</b> wind</span>
+            <span><b id="weather-rain">-- mm</b> rain</span>
+          </div>
+
+          <div id="forecast-list" class="forecast-list" aria-live="polite"></div>
+        </article>
+
+        <article class="panel calendar-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Calendar</p>
+              <h2>Upcoming</h2>
+            </div>
+            <span id="calendar-updated" class="freshness">Waiting</span>
+          </div>
+          <div id="calendar-list" class="event-list" aria-live="polite"></div>
+        </article>
+
+        <article class="panel todo-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">To-do</p>
+              <h2>Focus list</h2>
+            </div>
+            <span id="todo-count" class="freshness">0 open</span>
+          </div>
+
+          <form id="todo-form" class="todo-form">
+            <input id="todo-input" type="text" placeholder="Add a task" autocomplete="off" />
+            <button type="submit">Add</button>
+          </form>
+
+          <div id="todo-list" class="todo-list" aria-live="polite"></div>
+        </article>
+
+        <article class="panel music-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Music</p>
+              <h2>Now playing</h2>
+            </div>
+            <span id="music-updated" class="freshness">Waiting</span>
+          </div>
+
+          <div class="music-card">
+            <div class="album-art" aria-hidden="true">
+              <span></span>
+            </div>
+            <div class="music-copy">
+              <p id="music-status" class="music-status">Idle</p>
+              <strong id="music-title">No active player</strong>
+              <span id="music-artist">Install playerctl for local player detection.</span>
+            </div>
+          </div>
+          <div class="progress-track" aria-label="Playback progress">
+            <span id="music-progress"></span>
+          </div>
+        </article>
+
+        <article class="panel network-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Network</p>
+              <h2>System status</h2>
+            </div>
+            <span id="network-updated" class="freshness">Waiting</span>
+          </div>
+          <dl class="status-list">
+            <div>
+              <dt>Hostname</dt>
+              <dd id="network-hostname">--</dd>
+            </div>
+            <div>
+              <dt>Local IP</dt>
+              <dd id="network-ip">--</dd>
+            </div>
+            <div>
+              <dt>Wi-Fi</dt>
+              <dd id="network-ssid">--</dd>
+            </div>
+            <div>
+              <dt>Internet</dt>
+              <dd id="network-online">Checking</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="panel news-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">News</p>
+              <h2>RSS feed</h2>
+            </div>
+            <span id="rss-updated" class="freshness">Waiting</span>
+          </div>
+          <div id="rss-list" class="news-list" aria-live="polite"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/app.js?v=1.0.0" defer></script>
+  </body>
+</html>
